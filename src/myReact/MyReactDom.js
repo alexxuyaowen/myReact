@@ -37,7 +37,7 @@ const render = (reactElement, domElement) => {
 
     // Assignment if it is function component
     if (typeof type === 'function') {
-      render(new type(props), domElement);
+      render(type(props), domElement);
       return;
     }
 
