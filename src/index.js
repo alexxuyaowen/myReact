@@ -27,16 +27,16 @@ class Counter extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     //
-    console.log('Props', props);
-    console.log('state', state);
+    // console.log('Props', props);
+    // console.log('state', state);
     if (props.title) {
       return { ...state, title: props.title };
     }
     return state;
   }
   render() {
-    console.log('section', document.querySelector('section'));
-    console.log('STATE', this.state);
+    // console.log('section', document.querySelector('section'));
+    // console.log('STATE', this.state);
     return (
       <section>
         <header>
@@ -48,12 +48,12 @@ class Counter extends React.Component {
     );
   }
   componentDidMount() {
-    console.log('section', document.querySelector('section'));
+    // console.log('section', document.querySelector('section'));
   }
 }
 
-console.log('Counter', Counter);
-console.log('<Counter/>', <Counter />);
+// console.log('Counter', Counter);
+// console.log('<Counter/>', <Counter />);
 
 MyReactDOM.render(
   <Counter title='MyCounter' />,

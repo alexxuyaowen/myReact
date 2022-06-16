@@ -2,7 +2,7 @@ import React from 'react';
 
 const render = (reactElement, domElement) => {
   let curDom;
-  console.log('TEST', reactElement);
+  //   console.log('TEST', reactElement);
   if (reactElement === undefined) {
     return;
   }
@@ -12,22 +12,22 @@ const render = (reactElement, domElement) => {
     const { type, props } = reactElement;
     /// if type is ClassCompoennt
     if (type.prototype instanceof React.Component) {
-      console.log('class componnent props', props);
+      //   console.log('class componnent props', props);
       /// Mounting
       /// constructor
       const curInstance = new type(props);
-      console.log('curInstance', curInstance);
+      //   console.log('curInstance', curInstance);
 
       // getDerivedStateFromProps
       curInstance.state = type.getDerivedStateFromProps(
         props,
         curInstance.state
       );
-      console.log('curInstance', curInstance);
+      //   console.log('curInstance', curInstance);
 
       // render
       const curReactElement = curInstance.render();
-      console.log('curReactElement', curReactElement);
+      //   console.log('curReactElement', curReactElement);
       render(curReactElement, domElement);
       if (curInstance.componentDidmount) {
         curInstance.componentDidmount();
@@ -46,7 +46,7 @@ const render = (reactElement, domElement) => {
     Object.entries(props).forEach(([key, value]) => {
       if (key === 'children') {
         if (Array.isArray(value)) {
-          console.log(value);
+          //   console.log(value);
           value.forEach(rElement => {
             render(rElement, curDom);
           });
